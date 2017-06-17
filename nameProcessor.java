@@ -34,15 +34,15 @@ public class nameProcessor{
 				System.out.println("Enter M/F.");
 				ans = in.next();
 				if (ans.equalsIgnoreCase("m")){
-					gen = "Boys ";
+					gen = "Masculine ";
 				}else if (ans.equalsIgnoreCase("f")){
-					gen = "Girls ";
+					gen = "Feminine ";
 				} else{
 					er+= "gender ";
 					validInputs = false;
 				}
 
-			}
+			} 
 		}
 		if (args.length <3 && args.length>0){
 			er+= " number of arguments.";
@@ -50,9 +50,9 @@ public class nameProcessor{
 		} 
 		if (args.length >=3){
 			if (args [2].equalsIgnoreCase("M")){
-				gen="Boys ";
+				gen="Masculine ";
 			}else if (args[2].equalsIgnoreCase("F")){
-				gen="Girls ";
+				gen="Feminine ";
 			}else{
 				er+= "gender ";
 				validInputs = false;
@@ -82,11 +82,11 @@ public class nameProcessor{
 			}
 			Iterator<String> iter;
 			
-			if (gen.equals("Girls ")){
+			if (gen.equals("Feminine ")){
 				iter = names.filter(name->name.startsWith(lt))
 					.filter(pop->pop.split(",")[1].equals ("F"))
 						.map(nm->nm.split(",")[0]).iterator();
-			} else if (gen.equals("Boys ")){
+			} else if (gen.equals("Masculine ")){
 				iter = names.filter(name->name.startsWith(lt))
 					.filter(pop->pop.split(",")[1].equals ("M"))
 						.map(nm->nm.split(",")[0]).iterator();
